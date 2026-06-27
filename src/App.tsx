@@ -41,7 +41,7 @@ const initialMemories: Memory[] = [
 function App() {
   const [memories, setMemories] = useState<Memory[]>(initialMemories);
 
-  function handleAddSampleMemory(){
+  function handleAddSampleMemory() {
     const newMemory: Memory = {
       id: `mem_${Date.now()}`,
       title: "New temporary memory",
@@ -52,7 +52,7 @@ function App() {
       importanceScore: 3,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-    }
+    };
     setMemories((currentMemories) => [...currentMemories, newMemory]);
   }
 
@@ -62,7 +62,7 @@ function App() {
       <p>A second-brain memory dashboard built with React and TypeScript.</p>  
 
       <button onClick={handleAddSampleMemory}>Add Sample Memory</button>
-      <MemoryList memories={memories}/>
+      <MemoryList memories={memories} />
     </main>
     );
 }
