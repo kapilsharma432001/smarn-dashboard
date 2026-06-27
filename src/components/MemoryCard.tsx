@@ -1,17 +1,12 @@
 import type { Memory } from "../types/memory";
 
-function MemoryCard() {
-    const memory: Memory = {
-        id: "mem_1",
-        title: "Learn React Components",
-        content: "Components help us split UI into reusable pieces.",
-        category: "learning",
-        status: "active",
-        tags: ["react", "components"],
-        importanceScore: 4,
-        createdAt: "2026-06-27T10:00:00Z",
-        updatedAt: "2026-06-27T10:00:00Z",
-    };
+// This says: MemoryCard just receive one prop called memory.
+// That memory just follow the Memory type.
+type MemoryCardProps = {
+    memory: Memory;
+};
+
+function MemoryCard( { memory }: MemoryCardProps) {
     return (
         <article>
             <h2>{memory.title}</h2>
