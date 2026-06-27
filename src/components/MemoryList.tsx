@@ -2,7 +2,7 @@ import type { Memory } from "../types/memory";
 import MemoryCard from "./MemoryCard";
 
 type MemoryListProps = {
-    memories : Memory[];
+    memories: Memory[];
 };
 
 function MemoryList({ memories }: MemoryListProps){
