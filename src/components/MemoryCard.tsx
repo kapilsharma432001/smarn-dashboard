@@ -6,7 +6,7 @@ type MemoryCardProps = {
     memory: Memory;
 };
 
-function MemoryCard( { memory }: MemoryCardProps) {
+function MemoryCard({ memory }: MemoryCardProps) {
     return (
         <article>
             <h2>{memory.title}</h2>
@@ -16,7 +16,7 @@ function MemoryCard( { memory }: MemoryCardProps) {
             <p>Importance: {memory.importanceScore}/5</p>
             <p>Tags: {memory.tags.join(", ")}</p>
         </article>
-    )
+    );
 }
 
 export default MemoryCard;
