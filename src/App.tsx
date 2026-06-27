@@ -1,8 +1,8 @@
+import { useState } from "react";
 import MemoryList from "./components/MemoryList";
 import type { Memory } from "./types/memory";
 
-function App() {
-  const memories: Memory[] = [
+const initialMemories: Memory[] = [
     {
       id: "mem_1",
       title: "Learn React Props",
@@ -37,10 +37,31 @@ function App() {
       updatedAt: "2026-06-27T12:00:00Z",
     },
   ];
+
+function App() {
+  const [memories, setMemories] = useState<Memory[]>(initialMemories);
+
+  function handleAddSampleMemory(){
+    const newMemory: Memory = {
+      id: `mem_${Date.now()}`,
+      title: "New temporary memory",
+      content: "This memory was added using useState.",
+      category: "idea",
+      status: "active",
+      tags: ["react", "state"],
+      importanceScore: 3,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    }
+    setMemories((currentMemories) => [...currentMemories, newMemory]);
+  }
+
   return (
     <main>
       <h1>SMARN Dashboard</h1>
       <p>A second-brain memory dashboard built with React and TypeScript.</p>  
+
+      <button onClick={handleAddSampleMemory}>Add Sample Memory</button>
       <MemoryList memories={memories}/>
     </main>
     );

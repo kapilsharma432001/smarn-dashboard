@@ -10,6 +10,7 @@ function MemoryCard({ memory }: MemoryCardProps) {
     return (
         <article>
             <h2>{memory.title}</h2>
+            <h3>{memory.id}</h3>
             <p>{memory.content}</p>
             <p>Category: {memory.category}</p>
             <p>Status: {memory.status}</p>
